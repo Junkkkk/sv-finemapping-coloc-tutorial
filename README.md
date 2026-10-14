@@ -32,7 +32,7 @@ were produced by notebook 00, and you can rerun it to check that you get the sam
 |---|---|
 | **HP** protein, plasma and CSF | A 1.7 kb deletion is the lead variant, alone in its credible set, and associates more strongly with CSF HP than its best-tagging SNV rs217181 |
 | **GGA2 / COG7** methylation segment, AD | The segment colocalizes with AD, and a 208 bp tandem-repeat deletion near the COG7 promoter is in its credible set |
-| **LRRC37A2** expression (MAPT region), AD and PD | Expression colocalizes with AD (PP.H4 = 0.79) and PD (PP.H4 = 0.98), with a 37 bp insertion as the lead variant of the credible set |
+| **LRRC37A2** expression (MAPT region), AD and PD | Expression colocalizes with AD and PD, with a 37 bp insertion as the lead variant of the credible set |
 
 The notebooks reproduce these findings on the SPHERE Twin; exact numbers differ slightly from the paper.
 
