@@ -1,6 +1,6 @@
 # Fine-mapping and colocalization with structural variants
 
-**Junyoung Park** · Stanford University
+**Junyoung Park** · Stanford University (jpark01@stanford.edu)
 
 Hands-on notebooks for the ASHG 2026 workshop **"Fine-mapping and Colocalization with Structural
 Variants: Practical Workflows Using GWAS and Multi-omic Summary Statistics"**.
