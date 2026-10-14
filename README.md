@@ -61,9 +61,9 @@ missing). The notebooks were run with R 4.3.1, susieR 0.14.2 and coloc 5.2.3.
 
 ## Contact
 
-- Junyoung Park (notebooks and data): [jpark01@stanford.edu](mailto:jpark01@stanford.edu)
-- Greicius Lab, Stanford University: Michael D. Greicius (PI), [greicius@stanford.edu](mailto:greicius@stanford.edu) · [greiciuslab.stanford.edu](https://greiciuslab.stanford.edu)
 - Workshop: Tanner D. Jensen ([tannerj@stanford.edu](mailto:tannerj@stanford.edu)), Yann Le Guen ([yleguen@stanford.edu](mailto:yleguen@stanford.edu))
+- Notebooks and data: Junyoung Park ([jpark01@stanford.edu](mailto:jpark01@stanford.edu))
+- Greicius Lab, Stanford University: Michael D. Greicius (PI), [greicius@stanford.edu](mailto:greicius@stanford.edu) · [greiciuslab.stanford.edu](https://greiciuslab.stanford.edu)
 
 ## Acknowledgments
 
