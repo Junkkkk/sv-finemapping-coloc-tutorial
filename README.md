@@ -18,11 +18,11 @@ fine-mapping and colocalization.
 
 ## Notebooks
 
-| Notebook | What you do | Run time |
-|---|---|---|
-| [`01_sv_candidates_at_gwas_loci`](notebooks/01_sv_candidates_at_gwas_loci.ipynb) | Find SVs near AD/PD GWAS leads, their allele frequency and length, LD with the lead SNV, best-tagging SNVs; the HP deletion that SNVs tag poorly | < 1 min |
-| [`02_finemapping_and_colocalization`](notebooks/02_finemapping_and_colocalization.ipynb) | SV-QTL scan, joint SV + SNV fine-mapping with SuSiE, colocalization with AD/PD GWAS (`coloc.abf`) with regional and LocusCompare plots, and the "SV in credible set + colocalization" call | < 1 min |
-| [`00_covariates_from_full_twin`](notebooks/00_covariates_from_full_twin.ipynb) | Optional: download the full Twin (~550 MB) and recompute the ancestry and phenotype PCs used as covariates | ~5 min + download |
+| Notebook | What you do |
+|---|---|
+| [`01_sv_candidates_at_gwas_loci`](notebooks/01_sv_candidates_at_gwas_loci.ipynb) | Find SVs near AD/PD GWAS leads, their allele frequency and length, LD with the lead SNV, best-tagging SNVs; the HP deletion that SNVs tag poorly |
+| [`02_finemapping_and_colocalization`](notebooks/02_finemapping_and_colocalization.ipynb) | SV-QTL scan, joint SV + SNV fine-mapping with SuSiE, colocalization with AD/PD GWAS (`coloc.abf`) with regional and LocusCompare plots, and the "SV in credible set + colocalization" call |
+| [`00_covariates_from_full_twin`](notebooks/00_covariates_from_full_twin.ipynb) | Optional: download the full Twin (~550 MB) and recompute the ancestry and phenotype PCs used as covariates |
 
 The notebooks are saved with their outputs, so you can read them without running anything.
 Notebooks 01 and 02 use the small locus files in [`data/`](data/README.md) (about 20 MB); the covariates there
