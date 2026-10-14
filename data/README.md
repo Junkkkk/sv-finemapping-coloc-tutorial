@@ -12,8 +12,7 @@ Please acknowledge: "Stanford Alzheimer's Disease Research Center, NIH/NIA grant
 
 The full Twin release is on Hugging Face:
 [`jpark01/sv-qtl-coloc-data`](https://huggingface.co/datasets/jpark01/sv-qtl-coloc-data), folder
-`sv-qtl-coloc/input`, commit `02821371c26603cc9460396582eb4ebfbc3257df`. `data_prep/build_workshop_data.py`
-builds this folder from it.
+`sv-qtl-coloc/input`, commit `02821371c26603cc9460396582eb4ebfbc3257df`.
 
 ## `loci.tsv`
 
@@ -69,7 +68,7 @@ between 0.02 and 0.98.
 
 - AD: Bellenguez *et al.* 2022, GWAS Catalog GCST90027158 (GRCh38).
 - PD: Kim *et al.* 2024, GWAS Catalog GCST90275127 (random-effects p-values), lifted from GRCh37 to GRCh38
-  with the UCSC `hg19ToHg38` chain (`data_prep/chain_liftover.py`).
+  with the UCSC `hg19ToHg38` chain.
 
 ## `reference/`
 
