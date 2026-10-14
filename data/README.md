@@ -32,7 +32,7 @@ Each region covers the trait ±1 Mb, the highlighted SV ±1 Mb, and every GWAS l
 
 ## `genotypes/`
 
-- `<locus>.SV.tsv.gz`: SVs overlapping the region, 544 people. Columns `#chr, start, end, svlen, variant_id`,
+- `<locus>.SV.tsv.gz`: SVs overlapping the region ±1 Mb, 544 people. Columns `#chr, start, end, svlen, variant_id`,
   then one dosage column per person. `svlen` is negative for deletions. IDs are Sniffles2 IDs
   (`Sniffles2.<TYPE>.<id>`).
 - `<locus>.SNV.tsv.gz`: SNVs and indels from short-read genomes inside the region, 416 people. Columns
@@ -43,7 +43,8 @@ All Twin values, including genotype dosages, are continuous numbers.
 
 ## `phenotypes/`
 
-`<Layer>.phenotypes.tsv`: the workshop traits for each layer (`Plasma`, `CSF`, `RNA`, `Methylation`).
+`<Layer>.phenotypes.tsv`: all traits of each layer (`Plasma`, `CSF`, `RNA`, `Methylation`) that lie inside the
+three regions.
 Columns `chrom, start, end, pheno_id`, then one normalized value per person.
 
 ## `covariates/`

@@ -56,8 +56,9 @@ def read_bed_rows(path, ids):
 
 
 def write_tsv_gz(df, path):
-    with gzip.open(path, "wt", compresslevel=9) as f:
-        df.to_csv(f, sep="\t", index=False, float_format=FLOAT_FORMAT)
+    # mtime=0 keeps the file identical when the content does not change
+    with open(path, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as gz:
+        gz.write(df.to_csv(sep="\t", index=False, float_format=FLOAT_FORMAT).encode())
 
 
 def main():
@@ -80,7 +81,6 @@ def main():
     for layer, ids in analyses.groupby("layer").pheno_id:
         rows = read_bed_rows(os.path.join(a.twin_dir, layer, "phenotype.bed"), sorted(set(ids)))
         pheno_rows[layer] = rows
-        rows.to_csv(os.path.join(out, "phenotypes", f"{layer}.phenotypes.tsv"), sep="\t", index=False, float_format=FLOAT_FORMAT)
     coords = pd.concat([r[["chrom", "start", "end", "pheno_id"]] for r in pheno_rows.values()])
     analyses = analyses.merge(coords.rename(columns={"chrom": "pheno_chrom", "start": "pheno_start", "end": "pheno_end"}), on="pheno_id")
     assert (analyses.pheno_chrom == analyses.chrom).all()
@@ -108,10 +108,24 @@ def main():
     analyses[cols].to_csv(os.path.join(out, "loci.tsv"), sep="\t", index=False)
     print(regions.to_string(index=False))
 
-    # Genotypes: SVs overlapping the region (all 544 people) and SNV dosages inside it (416 people).
+    # Phenotypes: every trait of the four layers that lies inside one of the regions (SV-QTL mapping),
+    # which includes the analysis traits above.
+    for layer in ["Plasma", "CSF", "RNA", "Methylation"]:
+        bed = pd.read_csv(os.path.join(a.twin_dir, layer, "phenotype.bed"), sep="\t")
+        bed = bed.rename(columns={bed.columns[3]: "pheno_id"})
+        keep = np.zeros(len(bed), dtype=bool)
+        for _, r in regions.iterrows():
+            keep |= (bed.chrom == r.chrom).to_numpy() & (bed.start >= r.region_start).to_numpy() & (bed.end <= r.region_end).to_numpy()
+        rows = bed[keep]
+        assert set(analyses.pheno_id[analyses.layer == layer]) <= set(rows.pheno_id)
+        rows.to_csv(os.path.join(out, "phenotypes", f"{layer}.phenotypes.tsv"), sep="\t", index=False, float_format=FLOAT_FORMAT)
+        print(f"{layer}: {len(rows)} traits in the regions")
+
+    # Genotypes: SVs overlapping the region +-1 Mb, so every trait in the region has its full cis window
+    # (all 544 people), and SNV dosages inside the region (416 people).
     for _, r in regions.iterrows():
         sv = sv_tables[r.chrom]
-        sv = sv[(sv.start <= r.region_end) & (sv.end >= r.region_start)]
+        sv = sv[(sv.start <= r.region_end + ONE_MB) & (sv.end >= r.region_start - ONE_MB)]
         write_tsv_gz(sv, os.path.join(out, "genotypes", f"{r.locus}.SV.tsv.gz"))
         num = r.chrom.replace("chr", "")
         var = pd.read_csv(os.path.join(a.twin_dir, "genotype", "SNV", f"SNV.{r.chrom}.variants.tsv"), sep="\t")
