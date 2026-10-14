@@ -42,7 +42,8 @@ The notebooks reproduce these findings on the SPHERE Twin; exact numbers differ 
 
 **Google Colab.** Open a notebook in Colab
 ([01](https://colab.research.google.com/github/Junkkkk/sv-finemapping-coloc-tutorial/blob/main/notebooks/01_sv_candidates_at_gwas_loci.ipynb),
-[02](https://colab.research.google.com/github/Junkkkk/sv-finemapping-coloc-tutorial/blob/main/notebooks/02_finemapping_and_colocalization.ipynb)),
+[02](https://colab.research.google.com/github/Junkkkk/sv-finemapping-coloc-tutorial/blob/main/notebooks/02_finemapping_and_colocalization.ipynb),
+[00](https://colab.research.google.com/github/Junkkkk/sv-finemapping-coloc-tutorial/blob/main/notebooks/00_covariates_from_full_twin.ipynb)),
 choose *Runtime → Change runtime type → R*, and run all cells. The first cell downloads this repository and
 installs missing R packages (a few minutes the first time). Run the first cell of notebook 02 while you work
 on notebook 01, so its packages are ready.
