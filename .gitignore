@@ -1,0 +1,13 @@
+full_twin/
+results/
+.ipynb_checkpoints/
+Rplots.pdf
+.DS_Store
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+.virtual_documents/
+*.part
+src_notebooks/
