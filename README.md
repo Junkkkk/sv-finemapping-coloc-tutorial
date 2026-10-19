@@ -18,7 +18,7 @@ fine-mapping and colocalization.
 
 | Notebook | What you do |
 |---|---|
-| [`01_sv_candidates_at_gwas_loci`](notebooks/01_sv_candidates_at_gwas_loci.ipynb) | Find SVs near AD/PD GWAS leads, their allele frequency and length, LD with the lead SNV, best-tagging SNVs; the HP deletion that SNVs tag poorly |
+| [`01_sv_candidates_at_gwas_loci`](notebooks/01_sv_candidates_at_gwas_loci.ipynb) | Find SVs near AD/PD GWAS leads, their allele frequency and length, LD with the displayed small-variant anchor, best-tagging SNPs/indels; the HP deletion that SNVs tag poorly |
 | [`02_finemapping_and_colocalization`](notebooks/02_finemapping_and_colocalization.ipynb) | SV-QTL mapping in four molecular layers, joint SV + SNV fine-mapping with SuSiE, colocalization with AD/PD GWAS (`coloc.abf`) with regional and LocusCompare plots, and the "SV in credible set + colocalization" call |
 | [`00_covariates_from_full_twin`](notebooks/00_covariates_from_full_twin.ipynb) | Optional: download the full Twin (~550 MB) and recompute the ancestry and phenotype PCs used as covariates |
 
@@ -34,7 +34,11 @@ were produced by notebook 00, and you can rerun it to check that you get the sam
 | **GGA2 / COG7** methylation segment, AD | The segment colocalizes with AD, and a 208 bp tandem-repeat deletion near the COG7 promoter is in its credible set |
 | **LRRC37A2** expression (MAPT region), AD and PD | Expression colocalizes with AD and PD, with a 37 bp insertion as the lead variant of the credible set |
 
-The notebooks reproduce these findings on the SPHERE Twin; exact numbers differ slightly from the paper.
+The notebooks revisit these examples on the SPHERE Twin; use the displayed results to assess the
+strength and resolution of the evidence rather than assuming exact agreement with the paper.
+
+Brief [instructor discussion answers](docs/discussion_answers.md) accompany the four questions at the
+end of each notebook.
 
 ## Running the notebooks
 
